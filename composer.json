@@ -38,7 +38,7 @@
     "illuminate/database": "11.x",
     "illuminate/filesystem": "11.x",
     "illuminate/support": "11.x",
-    "nikolag/core": "2.8.x",
+    "nikolag/core": "dev-master",
     "square/square": "29.0.0.20230720"
   },
   "require-dev": {
