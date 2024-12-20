@@ -1,92 +1,105 @@
 {
-    "name": "nikolag/laravel-square",
-    "description": "Square API integration with Laravel built on nikolag/core",
-    "keywords": ["square", "laravel", "square laravel integration", "square-laravel", "library", "package", "nikolag", "nikolag square", "nikolag-square", "laravel square"],
-    "license": "MIT",
-    "type": "laravel-package",
-    "support": {
-        "issues": "https://github.com/NikolaGavric94/laravel-square/issues",
-        "source": "https://github.com/NikolaGavric94/laravel-square",
-        "wiki": "https://github.com/NikolaGavric94/laravel-square/wiki",
-        "email": "nikola.gavric94@gmail.com"
+  "name": "nikolag/laravel-square",
+  "description": "Square API integration with Laravel built on nikolag/core",
+  "keywords": [
+    "square",
+    "laravel",
+    "square laravel integration",
+    "square-laravel",
+    "library",
+    "package",
+    "nikolag",
+    "nikolag square",
+    "nikolag-square",
+    "laravel square"
+  ],
+  "license": "MIT",
+  "type": "laravel-package",
+  "support": {
+    "issues": "https://github.com/NikolaGavric94/laravel-square/issues",
+    "source": "https://github.com/NikolaGavric94/laravel-square",
+    "wiki": "https://github.com/NikolaGavric94/laravel-square/wiki",
+    "email": "nikola.gavric94@gmail.com"
+  },
+  "authors": [
+    {
+      "name": "Nikola Gavric",
+      "email": "nikola.gavric94@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "doctrine/dbal": "^3.5",
+    "illuminate/config": "11.x",
+    "illuminate/console": "11.x",
+    "illuminate/container": "11.x",
+    "illuminate/contracts": "11.x",
+    "illuminate/database": "11.x",
+    "illuminate/filesystem": "11.x",
+    "illuminate/support": "11.x",
+    "nikolag/core": "2.8.x",
+    "square/square": "29.0.0.20230720"
+  },
+  "require-dev": {
+    "fakerphp/faker": "^1.13",
+    "orchestra/testbench": "8.x",
+    "phpunit/phpunit": "10.x",
+    "laravel/legacy-factories": "^1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nikolag\\Square\\": "src/",
+      "Nikolag\\Square\\Contracts\\": "src/contracts",
+      "Nikolag\\Square\\Exceptions\\": "src/exceptions",
+      "Nikolag\\Square\\Facades\\": "src/facades",
+      "Nikolag\\Square\\Models\\": "src/models",
+      "Nikolag\\Square\\Providers\\": "src/providers",
+      "Nikolag\\Square\\Traits\\": "src/traits",
+      "Nikolag\\Square\\Utils\\": "src/utils",
+      "Nikolag\\Square\\Builders\\": "src/builders"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Nikolag\\Square\\": "src/",
+      "Nikolag\\Square\\Contracts\\": "src/contracts",
+      "Nikolag\\Square\\Exceptions\\": "src/exceptions",
+      "Nikolag\\Square\\Facades\\": "src/facades",
+      "Nikolag\\Square\\Models\\": "src/models",
+      "Nikolag\\Square\\Providers\\": "src/providers",
+      "Nikolag\\Square\\Traits\\": "src/traits",
+      "Nikolag\\Square\\Utils\\": "src/utils",
+      "Nikolag\\Square\\Builders\\": "src/builders",
+      "Nikolag\\Square\\Tests\\": "tests/",
+      "Nikolag\\Square\\Tests\\Models\\": "tests/classes/"
+    }
+  },
+  "scripts": {
+    "test:coverage": [
+      "@putenv XDEBUG_MODE=coverage",
+      "phpunit --color=always --coverage-clover=\"build/clover.xml\""
+    ],
+    "test:coverage-html": [
+      "@putenv XDEBUG_MODE=coverage",
+      "phpunit --color=always --coverage-html=\"build/html\""
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3.3.x-dev"
     },
-    "authors": [{
-        "name": "Nikola Gavric",
-        "email": "nikola.gavric94@gmail.com",
-        "role": "Developer"
-    }],
-    "require": {
-        "php": ">=8.2",
-        "doctrine/dbal": "^3.5",
-        "illuminate/config": "10.x",
-        "illuminate/console": "10.x",
-        "illuminate/container": "10.x",
-        "illuminate/contracts": "10.x",
-        "illuminate/database": "10.x",
-        "illuminate/filesystem": "10.x",
-        "illuminate/support": "10.x",
-        "nikolag/core": "2.8.x",
-        "square/square": "29.0.0.20230720"
-    },
-    "require-dev": {
-        "fakerphp/faker": "^1.13",
-        "orchestra/testbench": "8.x",
-        "phpunit/phpunit": "10.x",
-        "laravel/legacy-factories": "^1.3"
-    },
-    "autoload": {
-        "psr-4": {
-            "Nikolag\\Square\\": "src/",
-            "Nikolag\\Square\\Contracts\\": "src/contracts",
-            "Nikolag\\Square\\Exceptions\\": "src/exceptions",
-            "Nikolag\\Square\\Facades\\": "src/facades",
-            "Nikolag\\Square\\Models\\": "src/models",
-            "Nikolag\\Square\\Providers\\": "src/providers",
-            "Nikolag\\Square\\Traits\\": "src/traits",
-            "Nikolag\\Square\\Utils\\": "src/utils",
-            "Nikolag\\Square\\Builders\\": "src/builders"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Nikolag\\Square\\": "src/",
-            "Nikolag\\Square\\Contracts\\": "src/contracts",
-            "Nikolag\\Square\\Exceptions\\": "src/exceptions",
-            "Nikolag\\Square\\Facades\\": "src/facades",
-            "Nikolag\\Square\\Models\\": "src/models",
-            "Nikolag\\Square\\Providers\\": "src/providers",
-            "Nikolag\\Square\\Traits\\": "src/traits",
-            "Nikolag\\Square\\Utils\\": "src/utils",
-            "Nikolag\\Square\\Builders\\": "src/builders",
-            "Nikolag\\Square\\Tests\\": "tests/",
-            "Nikolag\\Square\\Tests\\Models\\": "tests/classes/"
-        }
-    },
-    "scripts": {
-        "test:coverage": [
-            "@putenv XDEBUG_MODE=coverage",
-            "phpunit --color=always --coverage-clover=\"build/clover.xml\""
-        ],
-        "test:coverage-html": [
-            "@putenv XDEBUG_MODE=coverage",
-            "phpunit --color=always --coverage-html=\"build/html\""
-        ]
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "3.3.x-dev"
-        },
-        "laravel": {
-            "providers": [
-                "Nikolag\\Square\\Providers\\SquareServiceProvider"
-            ],
-            "aliases": {
-                "Square": "Nikolag\\Square\\Facades\\Square"
-            }
-        }
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "prefer-stable": true
+    "laravel": {
+      "providers": [
+        "Nikolag\\Square\\Providers\\SquareServiceProvider"
+      ],
+      "aliases": {
+        "Square": "Nikolag\\Square\\Facades\\Square"
+      }
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "prefer-stable": true
 }
