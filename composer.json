@@ -30,7 +30,7 @@
   ],
   "require": {
     "php": ">=8.2",
-    "doctrine/dbal": "^3.5",
+    "doctrine/dbal": "^4",
     "illuminate/config": "11.x",
     "illuminate/console": "11.x",
     "illuminate/container": "11.x",
